@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+        <title>ProjectGravity Mobile</title>
+        <link rel="shortcut icon" href="img/favicon.ico"/>
+
+        <script src="/scripts/JsonUtils.js"></script>
+        <script src="/scripts/socket.io-1.2.0.js"></script>
+        <script src="/scripts/jquery-1.11.1.js"></script>
+        <script src="/scripts/indexMobile.js"></script>
+        <link rel="stylesheet" type="text/css" href="/style/indexMobile.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="connectionStatus">Nicht verbunden</div>
+            <div id="pairContainer">
+                <input id="checkPin" type="number"/> <br>
+                <div id="pinButton" onclick="onBtnClickCheckPin()">Pair</div>
+            </div>
+
+            <div id="gameListContainer"></div>
+
+            <div id="gamepad">
+
+                <div id="leftGamepad">
+                    <div class="gameButton" id="Btn_A" onclick="keyPressed('A')">A</div>
+                </div>
+                <div id="middleGamepad">
+                    <div class="gameButton" id="Btn_start" onclick="startGame()">Start</div>
+                    <div class="gameButton" id="Btn_refresh" onclick="refreshPage()">Refresh</div>
+                </div>
+                <div id="rightGamepad">
+                    <div class="gameButton" id="Btn_B" onclick="keyPressed('B')">B</div>
+                </div>
+            </div>
+            <div onclick="testConnectionSpeed()">Connection Speed</div>
+        </div>
+        <dialog id="favDialog" style="width: 90%; height: 200px;">
+            <div onclick="$('#favDialog')[0].close();">Close</div>
+            <div id="dialog-content"></div>
+        </dialog>
+    </body>
+</html>

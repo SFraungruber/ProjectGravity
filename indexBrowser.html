@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ProjectGravity</title>
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+
+    <script src="/scripts/JsonUtils.js"></script>
+    <script src="/scripts/socket.io-1.2.0.js"></script>
+    <script src="/scripts/jquery-1.11.1.js"></script>
+    <script src="/scripts/responsiveslides.min.js"></script>
+    <script src="/scripts/jquery.qrcode.js"></script>
+    <script src="/scripts/qrcode.js"></script>
+    <script src="/scripts/spaceInvaders.js"></script>
+    <script src="/scripts/PingPong.js"></script>
+    <script src="/scripts/userAlert.js"></script>
+    <link rel="stylesheet" type="text/css" href="/style/indexBrowser.css">
+    <link rel="stylesheet" type="text/css" href="/style/imageSlider.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+</head>
+<body onresize="setWindowHeigth()" onload="setWindowHeigth()">
+
+    <header>
+        <a href="#" id="logo">
+            <img src="img/logo_full.png" alt="logo"/>
+        </a>
+        <nav>
+            <a href="#" id="menu-icon"></a>
+            <ul>
+                <li><a href="#section1Anchor" class="current">Info</a></li>
+                <li><a href="#section2Anchor" class="current">Project</a></li>
+                <li><a href="#section3Anchor" class="current">Team</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="headline">
+        <div class="container">
+            <div id="blurb">
+                <div id="pinContainer">
+                    <div id="getPin" onclick="addPlayer()">
+                        connect device
+                    </div>
+                </div>
+
+                <div id="game-container">
+                    <canvas id="game-canvas" width="400px" height="400px"></canvas>
+                    <h2 id="game-title"></h2>
+                </div>
+
+                <div id="slogan">
+                    <a href="#" target="_blank"><img src="img/apple_app_store_soon.png"></a>
+                    <a href="https://play.google.com/store/apps/details?id=fhhgb.philipp.projectgravity_android" target="_blank"><img src="img/google_app_store.png"></a>
+                    <br>
+                    one move, <br>control everything.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section1" class="section">
+        <a class="anchor" id="section1Anchor"></a>
+        <a href="#section1Anchor"><img class="arrow" src="/img/arrow.png"/></a>
+
+        <div class="container">
+            <h2>Info</h2>
+
+
+            <div class="callbacks_container">
+                <ul class="rslides" id="slider4">
+                    <li><img src="img/sketch/slider1.png" alt="download the app for iOS or Android"></li>
+                    <li><img src="img/sketch/slider2.png" alt="generate a pin and scan the QR-code"></li>
+                    <li><img src="img/sketch/slider3.png" alt="connect your phone with the browser"></li>
+                    <li><img src="img/sketch/slider4.png" alt="Select a game and wait for other players"></li>
+                    <li><img src="img/sketch/slider5.png" alt="Play the game and win"></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div id="section2" class="section">
+        <a class="anchor" id="section2Anchor"></a>
+        <a href="#section2Anchor"><img class="arrow" src="/img/arrow.png"/></a>
+
+        <div class="container">
+            <h2>About ProjectGravity</h2>
+
+            <p>
+
+                <h3>Short Info</h3>
+                <p>The aim of this project is to control a game in the browser of a PC via a smartphone. We develop an Android, iOS application and an additionally web backend for communication and a web frontend to display the game. Communication takes place via the Internet and by client-side input of a pin, which is displayed in the web frontend, to established the connection.</p>
+
+                <h3>Creation</h3>
+                    <p>The project was created in cooperation with the University Of Applied Sciences Upper Austria Hagenberg.</p>
+                    <p>What you see on this webpage and the both apps for Android and iOS were createt and published within the summer term in 2015.</p>
+                    <p>If you like our project, have sugestions or other informations, write us at <a style="font-weight: 500;" href="mailto:ProjectGravity1@gmail.com">ProjectGravity1@gmail.com</a> </p>
+
+                <h3>Used Technologies</h3>
+                <div>
+                    <h5 style="margin-bottom: 3px;">Server / Website</h5>
+
+                    - Node.js: with express, http, socket.io and hashmap <br>
+                    - Website: HTML5, CSS3, JavaScript <br>
+                    - Plug-Ins Website: <br>
+                    jQuery, <br>
+                    <a href="http://responsiveslides.com/" target="_blank">ResponsiveSlides.js</a>,  <br>
+                    <a href="http://jeromeetienne.github.io/jquery-qrcode/" target="_blank">QR-Code Generator</a>,  <br>
+                    <a href="http://blog.mailson.org/2013/02/simple-pong-game-using-html5-and-canvas/" target="_blank">PingPong</a>, <br>
+                    <a href="http://codepen.io/anthdeldev/pen/BHuGL" target="_blank">SpaceInvaders</a>
+                </div>
+
+                <div>
+                    <h5 style="margin-bottom: 3px;">Android</h5>
+
+                    - Java <br>
+                    - <a href="https://github.com/nkzawa/socket.io-client.java" target="_blank">Socket.io Client</a>,  <br>
+                    - Google Play Services,  <br>
+                    - <a href="https://code.google.com/p/google-gson/" target="_blank">google-gson</a>,  <br>
+                    - BaseGameUtils,  <br>
+                    - <a href="http://viewpagerindicator.com/" target="_blank">ViewPageIndicator</a>,  <br>
+                    - <a href="https://github.com/journeyapps/zxing-android-embedded" target="_blank">ZXing Android Embedded</a>,  <br>
+                    - <a href="https://github.com/zxing/zxing" target="_blank">Zxing Core</a>,  <br>
+                    - <a href="https://github.com/JakeWharton/butterknife" target="_blank">Butterknife</a>,  <br>
+
+                </div>
+
+                <div>
+                    <h5 style="margin-bottom: 3px;">iOS</h5>
+                    - Swift <br>
+                    - Google Play Services,  <br>
+                    - Socket.io Client,  <br>
+
+                </div>
+
+            </p>
+
+            <br>
+        </div>
+    </div>
+    <div id="section3" class="section">
+        <a class="anchor" id="section3Anchor"></a>
+        <a href="#section3Anchor"><img class="arrow" src="/img/arrow.png"/></a>
+
+        <div class="container">
+            <h2>The Team</h2>
+
+            <div class="teamPic" id="picu1" ><img src="/img/ralph.jpg"><h5>Ralph Schnalzenberger</h5>iOS</div>
+            <div class="teamPic" id="picu2" ><img src="/img/philipp.jpg"><h5>Philipp Hellmayr</h5>Android</div>
+            <div class="teamPic" id="picu3" ><img src="/img/sebastian.jpg"><h5>Sebastian Fraungruber</h5>Server/Website</div>
+        </div>
+    </div>
+    <footer>
+
+        <div id="left-footer">
+            <h4 style="margin-bottom: 3px; margin-top: 3px">ProjectGravity 2015</h4>
+            Created by Ralph Schnalzenberger, Philipp Hellmayr, Sebastian Fraungruber <br>
+            Contact us <a style="font-weight: 500;" href="mailto:ProjectGravity1@gmail.com">ProjectGravity1@gmail.com</a>
+        </div>
+
+        <div id="right-footer">
+        </div>
+
+        <div style="clear: both"></div>
+
+    </footer>
+    <script src="/scripts/indexBrowser.js"></script>
+</body>
+</html>

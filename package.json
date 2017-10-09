@@ -1,0 +1,13 @@
+{
+  "name": "ProjectGravity",
+  "version": "0.0.1",
+  "description": "FH Hagenberg MC02_PRO - ProjectGravity",
+  "scripts": {"start": "node index.js"},
+  "main": "index.js",
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*",
+    "mongodb": "*",
+    "hashmap": "*"
+  }
+}

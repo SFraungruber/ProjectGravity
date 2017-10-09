@@ -1,0 +1,24 @@
+JSONs
+
+	'event' :
+		- {type:'startGame', content:null}									// Mobile sendet Browser dass das Spiel gestartet wird
+		- {type:'positionUpdate', content:{x:2,y:3,z4}}						// Mobile sendet ein Position Update mit (Gyroskop)
+		- {type:'key', content:'B'}											// Mobile sendet einen Schuss
+		- {type:'gameReady', content:{id:1, name:"Ping Pong", player:2}}	// Browser teilt Mobile mit das alle Spieler verbunden sind
+		- {type:'selectGame', content:{id:1, name:"Ping Pong", player:2}} 	// Mobile sendet Browser das gewählte Spiel
+		- {type:'gameOver', content:{points:10, ranking:1}}					// das Spiel ist vorbei, browser sendet allen mobiles den eigenen Punktestand
+		- {type:'refreshPage', content:null}								// mobile Sendet dem Browser eine Anweisung zum Neuladen der Seite
+	'checkPin' :
+		- {pin:12345, status:false, player:-1}								// Mobile sendet Server den eingegebenen Pin zum Prüfen (false, -1)
+		- {pin:12345, status:true, player:0}								// Restliche prüfung des Pins (Server->Browser->Server->Mobile), JSON bleibt gleich
+		
+	'getPin' :
+		- {player:0, pin:''}												// Browser fordert von Server Pin
+		- {player:0, pin:12345} 											// Server antwortet mit Pin an
+		
+		
+	'loadGameList' :
+		- {games: [{id:0, name:"Ping Pong", player:2}, {id:1, name:"", player:1}]}	// Server sendet Mobile die Liste aller Spiele inkl. IDs, Namen und Spieleranzahl
+		- {filter: null}															// Mobile fragt Server um Liste mit allen Spielen
+		- {filter:{id:1234, name:"asdf", player:1}}									// Mobile fragt Server um Liste mit Spielen mit filterung
+		
