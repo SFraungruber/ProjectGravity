@@ -97,8 +97,8 @@ function init(){
 
     // start the server on port (3000) or on the OpenShift specific port
     httpServer.listen(
-        process.env.OPENSHIFT_NODEJS_PORT || 80,
-        process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1",
+        process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 80,
+        process.env.IP || process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1",
         function(){
             utils.LogMsg('Browserapp listening on *:80');
         }
