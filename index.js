@@ -95,12 +95,14 @@ function init(){
         });
     });
 
+	utils.LogMsg('start server on ' + (process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080));
+	utils.LogMsg('start server on ' + (process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'));
     // start the server on port (3000) or on the OpenShift specific port
     httpServer.listen(
-        process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 80,
-        process.env.IP || process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1",
+        process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+        process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
         function(){
-            utils.LogMsg('Browserapp listening on *:80');
+            utils.LogMsg('Browserapp listening on *:8080');
         }
     );
 
